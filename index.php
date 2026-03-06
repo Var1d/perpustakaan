@@ -1,3 +1,13 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SiPuBu — Perpustakaan Digital</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
 /* 
     SiPuBu - Sistem Informasi Perpustakaan Buku Digital
     Praktikum 4 - Application Programming Interface (API)
@@ -11,15 +21,6 @@
     Deskripsi:
     Aplikasi perpustakaan digital sederhana yang memungkinkan pengguna untuk mencari, meminjam, dan mengelola koleksi buku secara online.
 */
-<!DOCTYPE html>
-<html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SiPuBu — Perpustakaan Digital</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-    <style>
         :root {
             --green: #16a34a; --green-dark: #15803d; --green-deep: #166534;
             --green-light: #dcfce7; --green-border: #bbf7d0;
