@@ -62,24 +62,24 @@ class Peminjaman
     }
 
     // UPDATE status — kembalikan buku
-    public function kembalikan()
-    {
-        // Ambil buku_id dulu
-        $cek = $this->conn->prepare("SELECT buku_id FROM " . $this->table_name . " WHERE id = ?");
-        $cek->execute([$this->id]);
-        $row = $cek->fetch(PDO::FETCH_ASSOC);
-        if (!$row) return false;
+    public function kembalikan() {
+    // Ambil buku_id dulu
+    $cek = $this->conn->prepare("SELECT buku_id FROM peminjaman WHERE id = ?");
+    $cek->execute([$this->id]);
+    $row = $cek->fetch(PDO::FETCH_ASSOC);
+    
+    if (!$row) return false;
 
-        $query = "UPDATE " . $this->table_name . " SET status = 'dikembalikan' WHERE id = ?";
-        $stmt  = $this->conn->prepare($query);
-        if ($stmt->execute([$this->id])) {
-            // Tambah stok buku kembali
-            $upd = $this->conn->prepare("UPDATE buku SET stok = stok + 1 WHERE id = ?");
-            $upd->execute([$row['buku_id']]);
-            return true;
-        }
-        return false;
-    }
+    // Update status jadi dikembalikan
+    $stmt = $this->conn->prepare("UPDATE peminjaman SET status = 'dikembalikan' WHERE id = ?");
+    $stmt->execute([$this->id]);
+
+    // Tambah stok buku kembali
+    $upd = $this->conn->prepare("UPDATE buku SET stok = stok + 1 WHERE id = ?");
+    $upd->execute([$row['buku_id']]);
+
+    return true;
+}
 
     // DELETE — hapus data peminjaman
     public function delete()
