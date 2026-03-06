@@ -29,6 +29,8 @@ if (empty($data->id)) {
 
 $buku->id = $data->id;
 
+$db->prepare("DELETE FROM peminjaman WHERE buku_id = ?")->execute([$buku->id]);
+
 if ($buku->delete()) {
     http_response_code(200);
     echo json_encode(["message" => "Buku berhasil dihapus."]);
